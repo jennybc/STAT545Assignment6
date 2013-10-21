@@ -1,3 +1,6 @@
+system("rm -f *.pdf *.rds")
 source("GapMinder_LifeExpectancyExploration_DataPreparation.R")
 source("GapMinder_LifeExpectancyExploration_CreatingModels.R")
-file.remove("GapMinderbyLifeExpNoExtras.rds")
+library(knitr)
+stitch_rhtml("Master_Script.R")
+stitch_rhtml("GapMinder_LifeExpectancyExploration_CreatingModels.R")

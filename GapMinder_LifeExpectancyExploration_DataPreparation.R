@@ -6,7 +6,7 @@ library(ggplot2)
 #read in the data
 gDat <- read.delim("gapminderDataFiveYear.txt")
 #Check structure
-str(iDat)
+str(gDat)
 
 #drop Oceania
 iDat <- droplevels(subset(gDat, continent != "Oceania"))

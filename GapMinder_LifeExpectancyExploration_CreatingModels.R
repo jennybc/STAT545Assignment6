@@ -16,9 +16,13 @@ jFun <- function(x) {
   names(estimates) <- c("intercept", "slope","sd_resid")
   return(estimates)
 }
-## jFun(subset(iDat, country == 'India')) to see what it does
+
 jCoefs <- ddply(iDat, ~country+continent, jFun)
-saveRDS(jCoefs, "GapMinder_LifeExp_LinearFitDetails.rds")
+jCoefs  <- arrange(jCoefs,continent)
+write.table(jCoefs, "GapMinder_LifeExp_LinearFitDetails.tsv", quote = FALSE, sep = "\t", row.names=FALSE)
+############ new way
+id  <- unique(jCoefs$continents)
+data  <- within(jCoefs, continent  <- factor(as.character(continent),levels = id))
 
 #Define best as the countries with the lowest residual standard error, i.e. lowest sd_resid
 jCoefs<- arrange(jCoefs,continent,sd_resid)
@@ -38,6 +42,6 @@ PreFilename  <- "Facetted Scatter Plot of Life Expectancy Versus Year for Extrem
 for(con in levels(ExtremeCountriesbyYear$continent)){
   title  <- paste(PreFilename,con,"pdf",sep=".")
   pdf(title)
-xyplot(lifeExp ~ year|country, subset(ExtremeCountriesbyYear,continent==con), type = c("p", "r"),ylab="Life Expectancy", xlab= "Year",layout=c(4,2))
+print(xyplot(lifeExp ~ year|country, subset(ExtremeCountriesbyYear,continent==con), type = c("p", "r"),ylab="Life Expectancy", xlab= "Year",layout=c(4,2)))
   dev.off()
 }
