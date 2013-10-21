@@ -72,13 +72,13 @@
     (version <code class="knitr inline">1.4.1</code>)
     .</p>
 
-source("GapMinder_LifeExpectancyExploration_DataPreparation.R")## 'data.frame':	1680 obs. of  6 variables:
-##  $ country  : Factor w/ 140 levels "Afghanistan",..: 106 106 106 106 106 106 106 106 106 106 ...
+# Clear the system before runningsystem("rm -f *.pdf *.rds")# Run both scriptssource("Step1_Data_Prep.R")## 'data.frame':	1704 obs. of  6 variables:
+##  $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
-##  $ pop      : num  2534927 2822082 3051242 3451079 3992121 ...
-##  $ continent: Factor w/ 4 levels "Africa","Asia",..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ lifeExp  : num  40 41.5 43 44.1 44.6 ...
-##  $ gdpPercap: num  493 540 597 511 591 ...
+##  $ pop      : num  8425333 9240934 10267083 11537966 13079460 ...
+##  $ continent: Factor w/ 5 levels "Africa","Americas",..: 3 3 3 3 3 3 3 3 3 3 ...
+##  $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
+##  $ gdpPercap: num  779 821 853 836 740 ...
 ## 'data.frame':	1680 obs. of  6 variables:
 ##  $ country  : Factor w/ 140 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
@@ -93,11 +93,78 @@ source("GapMinder_LifeExpectancyExploration_DataPreparation.R")## 'data.frame':	
 ##  $ continent: Factor w/ 4 levels "Africa","Asia",..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ lifeExp  : num  40 41.5 43 44.1 44.6 ...
 ##  $ gdpPercap: num  493 540 597 511 591 ...
-source("GapMinder_LifeExpectancyExploration_CreatingModels.R")file.remove("GapMinderbyLifeExpNoExtras.rds")## [1] TRUE
-library(knitr)stitch_rhtml("Master_Script.R")## 
+source("Step2_Creating_Models.R")# Knit the scriptslibrary(knitr)stitch_rhtml("Step1_Data_Prep.R")## 
+## 
+## processing file: Step1_Data_Prep.Rhtml
+## Error: duplicate label 'setup'
+stitch_rhtml("Step2_Creating_Models.R")## 
+## 
+## processing file: Step2_Creating_Models.Rhtml
+##   |                                                                         |                                                                 |   0%  |                                                                         |........                                                         |  12%
+## label: setup (with options) 
+## List of 2
+##  $ include: logi FALSE
+##  $ cache  : logi FALSE
+## 
+##   |                                                                         |................                                                 |  25%
+##    inline R code fragments
+## 
+##   |                                                                         |........................                                         |  38%
+## label: auto-report
+##   |                                                                         |................................                                 |  50%
+##   ordinary text without R code
+## 
+##   |                                                                         |.........................................                        |  62%
+## label: session-info (with options) 
+## List of 1
+##  $ cache: logi FALSE
+## 
+##   |                                                                         |.................................................                |  75%
+##   ordinary text without R code
+## 
+##   |                                                                         |.........................................................        |  88%
+## label: clean-up (with options) 
+## List of 1
+##  $ include: logi FALSE
+## 
+##   |                                                                         |.................................................................| 100%
+##   ordinary text without R code
+## output file: Step2_Creating_Models.html
+## [1] "Step2_Creating_Models.html"
+stitch_rhtml("Master_Script.R")## 
 ## 
 ## processing file: Master_Script.Rhtml
-## Error: duplicate label 'setup'
+##   |                                                                         |                                                                 |   0%  |                                                                         |........                                                         |  12%
+## label: setup (with options) 
+## List of 2
+##  $ include: logi FALSE
+##  $ cache  : logi FALSE
+## 
+##   |                                                                         |................                                                 |  25%
+##    inline R code fragments
+## 
+##   |                                                                         |........................                                         |  38%
+## label: auto-report
+##   |                                                                         |................................                                 |  50%
+##   ordinary text without R code
+## 
+##   |                                                                         |.........................................                        |  62%
+## label: session-info (with options) 
+## List of 1
+##  $ cache: logi FALSE
+## 
+##   |                                                                         |.................................................                |  75%
+##   ordinary text without R code
+## 
+##   |                                                                         |.........................................................        |  88%
+## label: clean-up (with options) 
+## List of 1
+##  $ include: logi FALSE
+## 
+##   |                                                                         |.................................................................| 100%
+##   ordinary text without R code
+## output file: Master_Script.html
+## [1] "Master_Script.html"
 
 
 

@@ -1,6 +1,11 @@
-system("rm -f *.pdf *.rds")
-source("GapMinder_LifeExpectancyExploration_DataPreparation.R")
-source("GapMinder_LifeExpectancyExploration_CreatingModels.R")
+#Clear the system before running
+system("rm -f *.pdf *.tsv")
+
+#Run both scripts
+source("Step1_Data_Prep.R")
+source("Step2_Creating_Models.R")
+
+#Knit the scripts
 library(knitr)
-stitch_rhtml("Master_Script.R")
-stitch_rhtml("GapMinder_LifeExpectancyExploration_CreatingModels.R")
+stitch_rhtml("Step1_Data_Prep.R")
+stitch_rhtml("Step2_Creating_Models.R")
