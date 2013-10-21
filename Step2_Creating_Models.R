@@ -39,7 +39,7 @@ ExtremeCountries <- rbind(ExtremeCountries,subset(jCoefs, continent ==con)[-(n-4
 ExtremeCountries
 
 #Save the Data and Fits for the Extreme Countries
-write.table(jCoefs, "GapMinder_LifeExp_LinearFitExtremes.tsv", quote = FALSE, sep = "\t", row.names=FALSE)
+write.table(ExtremeCountries, "GapMinder_LifeExp_LinearFitExtremes.tsv", quote = FALSE, sep = "\t", row.names=FALSE)
 
 #Merge with more information so that we can generate better plots.
 ExtremeCountriesbyYear  <- merge(ExtremeCountries,subset(iDat, country %in% ExtremeCountries$country))

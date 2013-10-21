@@ -1,5 +1,5 @@
 #Clear the system before running
-system("rm -f *.pdf *.tsv")
+#system("rm -f *.pdf *.tsv *.html ")
 
 #Run both scripts
 source("Step1_Data_Prep.R")
