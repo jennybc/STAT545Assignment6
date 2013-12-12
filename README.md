@@ -39,9 +39,9 @@ Below are the output files that can be obtained by an R CMD BATCH of the Master_
 
 [GapMinder_LifeExp_LinearFitExtremes.tsv](https://github.com/neilspencer/STAT545Assignment6/blob/master/GapMinder_LifeExp_LinearFitExtremes.tsv)
 
-[Step1_Data_Prep.html](https://github.com/neilspencer/STAT545Assignment6/blob/master/Step1_Data_Prep.html)
+`Step1_Data_Prep.html`: [raw](https://github.com/neilspencer/STAT545Assignment6/blob/master/Step1_Data_Prep.html) or [rendered](http://htmlpreview.github.com/?https://github.com/neilspencer/STAT545Assignment6/blob/master/Step1_Data_Prep.html)
 
-[Step2_Creating_Models.html](https://github.com/neilspencer/STAT545Assignment6/blob/master/Step2_Creating_Models.html)
+`Step2_Creating_Models.html`: [raw](https://github.com/neilspencer/STAT545Assignment6/blob/master/Step2_Creating_Models.html) or [rendered](http://htmlpreview.github.com/?https://github.com/neilspencer/STAT545Assignment6/blob/master/Step2_Creating_Models.html)
 
 [Strip_plot_LifeExp_final.pdf](https://github.com/neilspencer/STAT545Assignment6/blob/master/Strip_plot_LifeExp_final.pdf)
 
