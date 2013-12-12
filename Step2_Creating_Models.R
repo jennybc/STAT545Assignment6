@@ -21,6 +21,8 @@ jFun <- function(x) {
   return(estimates)
 }
 
+jCoefs <- ddply(iDat, ~ country + continent, jFun)
+
 #Define best as the countries with the lowest residual standard error, i.e. lowest sd_resid
 jCoefs<- arrange(jCoefs,continent,sd_resid)
 
